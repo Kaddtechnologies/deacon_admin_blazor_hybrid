@@ -1,0 +1,238 @@
+[
+  {
+    "StateName": "Alabama",
+    "StateAbbreviation": "AL"
+  },
+  {
+    "StateName": "Alaska",
+    "StateAbbreviation": "AK"
+  },
+  {
+    "StateName": "American Samoa",
+    "StateAbbreviation": "AS"
+  },
+  {
+    "StateName": "Arizona",
+    "StateAbbreviation": "AZ"
+  },
+  {
+    "StateName": "Arkansas",
+    "StateAbbreviation": "AR"
+  },
+  {
+    "StateName": "California",
+    "StateAbbreviation": "CA"
+  },
+  {
+    "StateName": "Colorado",
+    "StateAbbreviation": "CO"
+  },
+  {
+    "StateName": "Connecticut",
+    "StateAbbreviation": "CT"
+  },
+  {
+    "StateName": "Delaware",
+    "StateAbbreviation": "DE"
+  },
+  {
+    "StateName": "District Of Columbia",
+    "StateAbbreviation": "DC"
+  },
+  {
+    "StateName": "Federated States Of Micronesia",
+    "StateAbbreviation": "FM"
+  },
+  {
+    "StateName": "Florida",
+    "StateAbbreviation": "FL"
+  },
+  {
+    "StateName": "Georgia",
+    "StateAbbreviation": "GA"
+  },
+  {
+    "StateName": "Guam",
+    "StateAbbreviation": "GU"
+  },
+  {
+    "StateName": "Hawaii",
+    "StateAbbreviation": "HI"
+  },
+  {
+    "StateName": "Idaho",
+    "StateAbbreviation": "ID"
+  },
+  {
+    "StateName": "Illinois",
+    "StateAbbreviation": "IL"
+  },
+  {
+    "StateName": "Indiana",
+    "StateAbbreviation": "IN"
+  },
+  {
+    "StateName": "Iowa",
+    "StateAbbreviation": "IA"
+  },
+  {
+    "StateName": "Kansas",
+    "StateAbbreviation": "KS"
+  },
+  {
+    "StateName": "Kentucky",
+    "StateAbbreviation": "KY"
+  },
+  {
+    "StateName": "Louisiana",
+    "StateAbbreviation": "LA"
+  },
+  {
+    "StateName": "Maine",
+    "StateAbbreviation": "ME"
+  },
+  {
+    "StateName": "Marshall Islands",
+    "StateAbbreviation": "MH"
+  },
+  {
+    "StateName": "Maryland",
+    "StateAbbreviation": "MD"
+  },
+  {
+    "StateName": "Massachusetts",
+    "StateAbbreviation": "MA"
+  },
+  {
+    "StateName": "Michigan",
+    "StateAbbreviation": "MI"
+  },
+  {
+    "StateName": "Minnesota",
+    "StateAbbreviation": "MN"
+  },
+  {
+    "StateName": "Mississippi",
+    "StateAbbreviation": "MS"
+  },
+  {
+    "StateName": "Missouri",
+    "StateAbbreviation": "MO"
+  },
+  {
+    "StateName": "Montana",
+    "StateAbbreviation": "MT"
+  },
+  {
+    "StateName": "Nebraska",
+    "StateAbbreviation": "NE"
+  },
+  {
+    "StateName": "Nevada",
+    "StateAbbreviation": "NV"
+  },
+  {
+    "StateName": "New Hampshire",
+    "StateAbbreviation": "NH"
+  },
+  {
+    "StateName": "New Jersey",
+    "StateAbbreviation": "NJ"
+  },
+  {
+    "StateName": "New Mexico",
+    "StateAbbreviation": "NM"
+  },
+  {
+    "StateName": "New York",
+    "StateAbbreviation": "NY"
+  },
+  {
+    "StateName": "North Carolina",
+    "StateAbbreviation": "NC"
+  },
+  {
+    "StateName": "North Dakota",
+    "StateAbbreviation": "ND"
+  },
+  {
+    "StateName": "Northern Mariana Islands",
+    "StateAbbreviation": "MP"
+  },
+  {
+    "StateName": "Ohio",
+    "StateAbbreviation": "OH"
+  },
+  {
+    "StateName": "Oklahoma",
+    "StateAbbreviation": "OK"
+  },
+  {
+    "StateName": "Oregon",
+    "StateAbbreviation": "OR"
+  },
+  {
+    "StateName": "Palau",
+    "StateAbbreviation": "PW"
+  },
+  {
+    "StateName": "Pennsylvania",
+    "StateAbbreviation": "PA"
+  },
+  {
+    "StateName": "Puerto Rico",
+    "StateAbbreviation": "PR"
+  },
+  {
+    "StateName": "Rhode Island",
+    "StateAbbreviation": "RI"
+  },
+  {
+    "StateName": "South Carolina",
+    "StateAbbreviation": "SC"
+  },
+  {
+    "StateName": "South Dakota",
+    "StateAbbreviation": "SD"
+  },
+  {
+    "StateName": "Tennessee",
+    "StateAbbreviation": "TN"
+  },
+  {
+    "StateName": "Texas",
+    "StateAbbreviation": "TX"
+  },
+  {
+    "StateName": "Utah",
+    "StateAbbreviation": "UT"
+  },
+  {
+    "StateName": "Vermont",
+    "StateAbbreviation": "VT"
+  },
+  {
+    "StateName": "Virgin Islands",
+    "StateAbbreviation": "VI"
+  },
+  {
+    "StateName": "Virginia",
+    "StateAbbreviation": "VA"
+  },
+  {
+    "StateName": "Washington",
+    "StateAbbreviation": "WA"
+  },
+  {
+    "StateName": "West Virginia",
+    "StateAbbreviation": "WV"
+  },
+  {
+    "StateName": "Wisconsin",
+    "StateAbbreviation": "WI"
+  },
+  {
+    "StateName": "Wyoming",
+    "StateAbbreviation": "WY"
+  }
+]

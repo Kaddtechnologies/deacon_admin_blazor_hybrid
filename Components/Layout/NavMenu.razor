@@ -1,0 +1,38 @@
+﻿@using Syncfusion.Blazor.Buttons
+<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">Deacon Administration</a>
+    </div>
+</div>
+
+<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+
+<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="bi" aria-hidden="true"> <SfIcon Name="IconName.Home" Size="IconSize.Large"></SfIcon></span> Home
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="roster">
+               <span class="bi" aria-hidden="true"> <SfIcon Name="IconName.People" Size="IconSize.Large"></SfIcon></span> Deacons Roster
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="events">
+                <span class="bi" aria-hidden="true"><SfIcon Name="IconName.Month" Size="IconSize.Large"></SfIcon></span>Events Calendar
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="messages">
+               <span class="bi" aria-hidden="true"> <SfIcon Name="IconName.CommentAdd" Size="IconSize.Large"></SfIcon></span>  Messages
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="weather">
+                <span class="bi" aria-hidden="true"> <SfIcon Name="IconName.Settings" Size="IconSize.Large"></SfIcon></span>Settings
+            </NavLink>
+        </div>
+    </nav>
+</div>

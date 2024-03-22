@@ -1,0 +1,165 @@
+﻿@page "/roster"
+@using DeaconAdminHybrid.Components.Data
+@using DeaconAdminHybrid.Components.Models
+@using Syncfusion.Blazor.Data
+@using Syncfusion.Blazor.Layouts
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor.DropDowns
+@using Syncfusion.Blazor.Grids
+@using Action = Syncfusion.Blazor.Grids.Action
+@using Syncfusion.Blazor.Inputs
+@using Utility
+
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 bUser-bottom">
+    <h1 class="h2">Deacon Roster</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-group me-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+        </div>
+        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle d-flex align-items-center gap-1">            
+            This week
+        </button>
+    </div>
+</div>
+  <div class="table-responsive small">
+      <SfGrid @ref="@DataGrid" TValue="UserModel" ID="Grid1" AllowPaging="true" AllowFiltering="true" AllowExcelExport="true" AllowPdfExport="true" AllowSorting="true" Toolbar="@(new List<string>() {"Add", "Edit", "Delete", "Cancel", "Update","ExcelExport","PdfExport","CsvExport", "Search"})">
+        <GridPageSettings PageSize="10"></GridPageSettings>
+        <GridEditSettings AllowAdding="true" AllowEditing="true" AllowDeleting="true" Mode="Syncfusion.Blazor.Grids.EditMode.Dialog">
+              <Template>
+            @{
+                var User = (context as UserModel);
+                <div>
+                      <div class="form-row">
+                        <div class="form-group d-flex justify-content-center">
+                        <div class="e-avatar image">
+                            <img src="@(User.AvatarUrl)" />
+                        </div> 
+                        </div>
+                        </div>
+                     <div class="form-row">
+                            <div class="form-group col-xs-12">
+                                <label class="e-float-text e-label-top">State</label>
+                                <SfDropDownList ID="DeaconTitle" @bind-Value="@(User.DeaconTitle)" TItem="DeaconTitleModel" TValue="string" DataSource="@DeaconTitles">
+                                    <DropDownListFieldSettings Value="TitleId" Text="DeaconPosition"></DropDownListFieldSettings>
+                                </SfDropDownList>
+                            </div>
+                     </div>                  
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                                <label class="e-float-text e-label-top">First Name</label>
+                                <SfTextBox ID="FirstName" @bind-Value="@(User.FirstName)"></SfTextBox>                           
+                        </div>
+                            <div class="form-group col-md-6">
+                                <label class="e-float-text e-label-top">Last Name</label>
+                                <SfTextBox ID="LastName" @bind-Value="@(User.LastName)"></SfTextBox>
+                            </div>
+                    </div>
+                    <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label class="e-float-text e-label-top">Email Addres</label>
+                                <SfTextBox Type="InputType.Email" ID="Email" @bind-Value="@(User.Email)"></SfTextBox>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="e-float-text e-label-top">Phone</label>
+                                <SfTextBox Type="InputType.Tel" ID="Phone" @bind-Value="@(User.PhoneNumber)"></SfTextBox>
+                            </div>
+                    </div>
+                    <div class="form-row">
+                            <div class="form-group col-xs-12">
+                                <label class="e-float-text e-label-top">Address</label>
+                                <SfTextBox ID="Address" @bind-Value="@(User.Address)"></SfTextBox>
+                            </div>
+                    </div>
+                    <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label class="e-float-text e-label-top">City</label>
+                                <SfTextBox ID="City" @bind-Value="@(User.City)"></SfTextBox>
+                            </div>
+                       <div class="form-group col-md-4">
+                            <label class="e-float-text e-label-top">State</label>
+                            <SfDropDownList ID="State" @bind-Value="@(User.State)" TItem="StateModel" TValue="string" DataSource="@StateModels">
+                                <DropDownListFieldSettings Value="StateAbbreviation" Text="StateName"></DropDownListFieldSettings>
+                            </SfDropDownList>
+                        </div>
+                            <div class="form-group col-md-4">
+                                <label class="e-float-text e-label-top">Zip</label>
+                                <SfTextBox ID="Zip" @bind-Value="@(User.Zip)"></SfTextBox>
+                            </div>
+                    </div>                    
+                </div>
+            }
+        </Template>
+          </GridEditSettings>
+          <GridFilterSettings Type="Syncfusion.Blazor.Grids.FilterType.Menu"></GridFilterSettings>
+        <GridPageSettings PageSize="5"></GridPageSettings>
+        <GridEvents OnToolbarClick="@GridToolbarClick" TValue="UserModel"></GridEvents>
+        <SfDataManager AdaptorInstance="typeof(UserDataAdaptor)" Adaptor="Adaptors.CustomAdaptor"></SfDataManager>
+        <GridColumns>
+            <GridColumn Type="Syncfusion.Blazor.Grids.ColumnType.CheckBox" Width="50"></GridColumn>
+          	<GridColumn Field=@nameof(UserModel.FirstName) HeaderText="FirstName"  Width="150"></GridColumn>
+              <GridColumn Field=@nameof(UserModel.DeaconTitle) HeaderText="DeaconTitle"  Width="150"></GridColumn>
+              <GridColumn Field=@nameof(UserModel.LastName) HeaderText="LastName"  Width="150"></GridColumn>
+              <GridColumn Field=@nameof(UserModel.Email) HeaderText="Email"  Width="150"></GridColumn>
+              <GridColumn Field=@nameof(UserModel.City) HeaderText="City"  Width="150"></GridColumn>
+              <GridColumn Field=@nameof(UserModel.PhoneNumber) HeaderText="PhoneNumber"  Width="150"></GridColumn>
+              <GridColumn Field=@nameof(UserModel.Address) HeaderText="Address"  Width="150"></GridColumn>
+              <GridColumn Field=@nameof(UserModel.State) HeaderText="State"  Width="150"></GridColumn>
+              <GridColumn Field=@nameof(UserModel.Zip) HeaderText="Zip"  Width="150"></GridColumn>
+              <GridColumn Field=@nameof(UserModel.AvatarUrl) HeaderText="AvatarUrl"  Width="150"></GridColumn>
+              <GridColumn Field=@nameof(UserModel.IsActive) HeaderText="IsActive"  Width="150"></GridColumn>
+              <GridColumn Field=@nameof(UserModel.CreatedDate) HeaderText="CreatedDate" AllowEditing="false"  Width="150"></GridColumn>
+              <GridColumn Field=@nameof(UserModel.ModifiedDate) HeaderText="ModifiedDate" AllowEditing="false"  Width="150"></GridColumn>
+              <GridColumn Field=@nameof(UserModel.LastLoginDate) HeaderText="LastLoginDate" AllowEditing="false"  Width="150"></GridColumn>
+              <GridColumn Field=@nameof(UserModel.DeaconPosition) HeaderText="DeaconPosition"  Width="150"></GridColumn>
+              <GridColumn Field=@nameof(UserModel.PostLocation) HeaderText="PostLocation" AllowEditing="false"  Width="150"></GridColumn>
+              <GridColumn Field=@nameof(UserModel.PostLocationDate) HeaderText="PostLocationDate" AllowEditing="false"  Width="150"></GridColumn>
+          </GridColumns>
+      </SfGrid>
+
+
+  </div>
+
+<style>
+    .image img {
+        height: 55px;
+        width: 55px;
+        border-radius: 50px;
+        box-shadow: inset 0 0 1px #e0e0e0, inset 0 0 14px rgba(0, 0, 0, 0.2);
+    }
+</style>
+@code {
+    SfGrid<UserModel> DataGrid { get; set; }
+    List<StateModel> StateModels { get; set; }
+    List<DeaconTitleModel> DeaconTitles { get; set; }
+
+    protected async override void OnInitialized()
+    {
+        StateModels = Utility.GetStateModel();
+
+        DeaconTitles =  await Utility.GetDeaconTitleModelsAsync();
+    }
+
+    
+    /// <summary>
+    /// Event for Toolbar click for Grid Exporting
+    /// </summary>
+    public void GridToolbarClick(Syncfusion.Blazor.Navigations.ClickEventArgs args)
+    {
+    	if (args.Item.Id == "Grid1_excelexport")
+        {
+            this.DataGrid.ExportToExcelAsync();
+        }
+    	if (args.Item.Id == "Grid1_pdfexport")
+        {
+            this.DataGrid.ExportToPdfAsync();
+        }
+    	if (args.Item.Id == "Grid1_csvexport")
+        {
+            this.DataGrid.ExportToCsvAsync();
+        }
+    }
+
+
+}
